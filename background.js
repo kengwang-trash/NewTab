@@ -42,7 +42,12 @@ var engine = {
     }
 };
 
+var config;
 
+document.addEventListener("DOMContentLoaded", function () {
+    refreshGoogleConfig();
+    refreshGoogleConfig();
+});
 
 chrome.contextMenus.create({
     title: chrome.i18n.getMessage("save_page_text"),
@@ -65,18 +70,29 @@ function savelink(link, title = null) {
 }
 
 function Search(keyword) {
-    alert("Try to find " + keyword + " ?");
+    let eg = engineNameToConfig();
+    alert("Try to find " + keyword + " by " + eg.name);
 
 }
 
-function engineNameToConfig(ename=getDefaultSearchEngine())
-{
-    return
+function refreshGoogleConfig() {
+    chrome.storage.sync.get({'defaultEngine': 'baidu'}, function (items) {
+        config = items;
+    });
 }
 
-function getDefaultSearchEngine() {
-    chrome.storage.sync.get({defaultEngine: 'baidu'}, function (items) {
-        return item.defaultEngine;
+function engineNameToConfig(ename = null) {
+    if (ename == null) {
+        refreshGoogleConfig();
+        return engine[config.defaultEngine];
+    }
+    return engine[ename];
+}
+
+
+function setDefaultSearchEngine(ename) {
+    chrome.storage.sync.set({'defaultEngine': ename}, function () {
+        console.log('Reselected to '.ename);
     });
 }
 
