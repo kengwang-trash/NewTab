@@ -1,0 +1,8 @@
+{
+  "plugin_desc": {"message": "NewTab, New World"},
+  "popup_title": {"message": "Mini NewTab"},
+  "plugin_name": {"message": "NewTab"},
+  "language_name": {"message": "English"},
+  "save_page_text": {"message": "Save to NewTab"},
+  "save_link_text": {"message": "Save Link to NewTab"}
+}

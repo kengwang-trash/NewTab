@@ -1,19 +1,35 @@
 {
-
-    "name": "NewTab",
-  
-    "description": "新的标签 新的世界",
-  
-    "version": "1.0",
-  
-    "manifest_version": 2,
-  
-    "incognito": "split",
-  
-    "chrome_url_overrides": {
-  
-      "newtab": "NewTab.html"
-  
-    }
-  
-  }
+  "name": "__MSG_plugin_name__",
+  "description": "__MSG_plugin_desc__",
+  "version": "1.0",
+  "default_locale": "zh_CN",
+  "manifest_version": 2,
+  "incognito": "split",
+  "chrome_url_overrides": {
+    "newtab": "NewTab.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "icons": {
+    "64": "icon.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "__MSG_popup_title__",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "webRequest",
+    "contextMenus"
+  ],
+  "homepage_url": "https://blog.tysv.top"
+}
