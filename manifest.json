@@ -1,0 +1,19 @@
+{
+
+    "name": "NewTab",
+  
+    "description": "新的标签 新的世界",
+  
+    "version": "1.0",
+  
+    "manifest_version": 2,
+  
+    "incognito": "split",
+  
+    "chrome_url_overrides": {
+  
+      "newtab": "NewTab.html"
+  
+    }
+  
+  }

@@ -1,0 +1,80 @@
+#searchbox {
+    height: 40px;
+    border-radius: 22px;
+}
+
+#container {
+    max-width: 1024px;
+    display: block!important;
+    margin-right: auto!important;
+    margin-left: auto!important;
+}
+
+#searchword {
+    bottom: 0;
+    color: rgb(117, 117, 117);
+    font-size: 16px;
+    height: 100%;
+    width: inherit;
+    left: 0;
+    line-height: 44px;
+    margin: auto 0;
+    overflow: hidden;
+    padding-inline-start: 48px;
+    position: absolute;
+    right: 44px;
+    text-align: initial;
+    text-overflow: ellipsis;
+    top: 0;
+    user-select: none;
+    vertical-align: middle;
+    visibility: inherit;
+    white-space: nowrap;
+}
+
+#searchlogo {
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100%;
+    background: 24px 24px rgb(117, 117, 117);
+    bottom: 0;
+    height: 24px;
+    left: 0;
+    margin: auto 0;
+    margin-inline-start: 16px;
+    position: absolute;
+    top: 0;
+    width: 24px;
+}
+
+#searchbox>#word {
+    bottom: 0;
+    box-sizing: border-box;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    padding-inline-start: 20px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#searchbox {
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+    box-sizing: border-box;
+    cursor: text;
+    font-size: 16px;
+    height: 44px;
+    margin: 0 auto;
+    max-width: 1024px;
+    opacity: 1;
+    position: relative;
+    transition: none;
+}
+
+#searchboxcontainer {
+    margin: 0 auto 0 auto;
+    min-width: 410px;
+    width: var(--content-width);
+}
