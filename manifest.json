@@ -31,5 +31,6 @@
     "webRequest",
     "contextMenus"
   ],
-  "homepage_url": "https://blog.tysv.top"
+  "homepage_url": "https://blog.tysv.top",
+  "content_security_policy": "script-src 'self'; object-src 'self'"
 }

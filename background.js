@@ -5,7 +5,7 @@ var engine = {
         searchLinkFinal: function (keyword) {
             return "https://www.baidu.com/#ie=utf-8&wd=" + keyword
         },
-        bigImg: "https://www.baidu.com/img/bd_logo1.png?qua=high&where=super"
+        bigImg: "/img/engineimg/baidu.png"
     },
     "google": {
         name: "Google",
@@ -13,7 +13,7 @@ var engine = {
         searchLinkFinal: function (keyword) {
             return "https://www.google.com/search?q=" + keyword
         },
-        bigImg: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        bigImg: "/img/engineimg/google.png"
     },
     "bing": {
         name: "Bing",
@@ -21,7 +21,7 @@ var engine = {
         searchLinkFinal: function (keyword) {
             return "https://www.bing.com/search?q=" + keyword
         },
-        bigImg: "https://ae01.alicdn.com/kf/H7999c5dbc3894b57a34bd557e9c17defw.png"
+        bigImg: "/img/engineimg/bing.png"
     },
     "duckduckgo": {
         name: "DuckDuckGo",
@@ -29,8 +29,8 @@ var engine = {
         searchLinkFinal: function (keyword) {
             return "https://duckduckgo.com/?q=" + keyword;
         },
-        bigImg: "https://duckduckgo.com/assets/logo_homepage.normal.v108.svg",
-        darkBigImg: "https://duckduckgo.com/assets/logo_homepage.alt.v108.svg"
+        bigImg: "/img/engineimg/duckduckgo.svg",
+        darkBigImg: "/img/engineimg/duckduckgo.night.svg"
     },
     "yahoo": {
         name: "Yahoo!",
@@ -38,7 +38,7 @@ var engine = {
         searchLinkFinal: function (keyword) {
             return "https://search.yahoo.com/search?p=" + keyword;
         },
-        bigImg: "https://s.yimg.com/pv/static/img/logo_f_p_white-1567793732828.min.png"
+        bigImg: "/img/engineimg/yahoo.png"
     }
 };
 
@@ -82,9 +82,11 @@ function refreshGoogleConfig() {
 }
 
 function engineNameToConfig(ename = null) {
-    if (ename == null) {
+    if (ename == null && config.defaultEngine) {
         refreshGoogleConfig();
         return engine[config.defaultEngine];
+    }else if(ename == null ){
+        return engine['baidu'];
     }
     return engine[ename];
 }
@@ -94,6 +96,7 @@ function setDefaultSearchEngine(ename) {
     chrome.storage.sync.set({'defaultEngine': ename}, function () {
         console.log('Reselected to '.ename);
     });
+    refreshGoogleConfig();
 }
 
 function getSetting(param) {

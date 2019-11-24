@@ -10,16 +10,21 @@
     <script src="js/NewTab.js"></script>
 </head>
 
-<body background="http://newtab.tysv.top:88/bing.php">
+<body style="background-color: azure" background="http://newtab.tysv.top:88/bing.php">
 <div id="hover">
 </div>
 <div style="text-align: center;">
     <div class="search-box">
-        <img id="egimg"/>
-        <input class="input-keyword" id="keyword">
-        <button onclick="SearchReady();">点我搜索!</button>
+        <div class="search-box-background"></div>
+        <div class="search-box-content">
+            <img id="egimg"/>
+            <br/>
+            <input class="input-keyword" id="keyword">
+            <button id="search_button">点我搜索!</button>
+        </div>
     </div>
 </div>
+<button id="switch_engine_button">Switch it!</button>
 </body>
 
 </html>
